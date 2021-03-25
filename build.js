@@ -71,6 +71,35 @@ shell.rm(`-Rf`, `${NPM_DIR}/src/**/*.js.map`);
 
 shell.cp(`-Rf`, [`package.json`, `LICENSE.md`, `README.md`], `${NPM_DIR}`);
 
+
+shell.rm(`-Rf`, `.gitignore`);
+shell.rm(`-Rf`, `LICENSE.md`);
+shell.rm(`-Rf`, `config`);
+shell.rm(`-Rf`, `karma.conf.js`);
+shell.rm(`-Rf`, `node_modules`);
+shell.rm(`-Rf`, `public_api.ts`);
+shell.rm(`-Rf`, `spec.bundle.js`);
+shell.rm(`-Rf`, `tsconfig.json`);
+shell.rm(`-Rf`, `.npmignore`);
+shell.rm(`-Rf`, `README.md`);
+shell.rm(`-Rf`, `demo`);
+shell.rm(`-Rf`, `license-banner.txt`);
+shell.rm(`-Rf`, `package-lock.json`);
+shell.rm(`-Rf`, `rollup.config.js`);
+shell.rm(`-Rf`, `src`);
+shell.rm(`-Rf`, `tslint.json`);
+shell.rm(`-Rf`, `.git`);
+shell.rm(`-Rf`, `CHANGELOG.md`);
+shell.rm(`-Rf`, `ng2-completer.ts`);
+shell.rm(`-Rf`, `package.json`);
+shell.rm(`-Rf`, `rollup.es.config.js`);
+shell.rm(`-Rf`, `tsconfig-build.json`);
+shell.rm(`-Rf`, `webpack.config.js`);
+
+shell.cp(`-Rf`,`${NPM_DIR}/*`, `.`);
+
+shell.rm(`-Rf`, `dist`);
+
 const packageJsonPath = path.join(__dirname, NPM_DIR, 'package.json');
 shell.sed('-i', /^.+postinstall.+$/, '', packageJsonPath);
 
